@@ -1,0 +1,11 @@
+# Separate environment for PaddleOCR (used once to extract in-image text, and for the OCR latency benchmark).
+# Python 3.10. paddlepaddle-gpu is not on PyPI: install it first from the PaddlePaddle index for your CUDA
+# version (https://www.paddlepaddle.org.cn/install/quick). Reported runs used the CUDA 12.6 build:
+#   pip install paddlepaddle-gpu==3.2.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu126/
+paddlepaddle-gpu==3.2.0
+paddleocr==3.3.3
+paddlex==3.3.13
+numpy==2.2.6
+pillow==12.3.0
+pyarrow==25.0.1
+opencv-contrib-python==4.10.0.84

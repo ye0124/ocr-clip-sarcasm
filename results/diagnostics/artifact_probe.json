@@ -1,0 +1,6 @@
+{
+  "n_native": 600,
+  "n_pasted": 600,
+  "cv_auc": 0.9722111111111111,
+  "note": "same donor lines; native crop vs pasted crop; frozen pretrained CLIP ViT-B/32 image features"
+}

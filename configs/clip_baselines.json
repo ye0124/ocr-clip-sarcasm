@@ -1,0 +1,290 @@
+{
+ "description": "CLIP-only models on the official MMSD2.0 split (sarcasm.train.train_clip). Hyperparameters shared by all runs. expected_initialization_full = SHA-256 of the initial state dict recorded in the original run; training stops if the rebuilt model differs.",
+ "common": {
+  "clip_path": "${MODELS}/clip-vit-base-patch32",
+  "arrow_root": "${ARROW_ROOT}",
+  "dino_root": "${DATA}/dinov2-small",
+  "precision": "fp32",
+  "micro_batch": 16,
+  "effective_batch": 16,
+  "accumulation": 1,
+  "epochs": 20,
+  "patience": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "clip_grad_norm": 1.0,
+  "num_workers": 2
+ },
+ "runs": [
+  {
+   "name": "small_mlp_seed42",
+   "model": "small_mlp",
+   "seed": 42,
+   "expected_initialization_full": "14343cb228b099780f9ea410abe6a1c33d173d7526d45b5d0161f780910c0baa"
+  },
+  {
+   "name": "small_mlp_seed43",
+   "model": "small_mlp",
+   "seed": 43,
+   "expected_initialization_full": "70c26225d639def66106965666f567c8877966e47786609b5a884cee57ad53b7"
+  },
+  {
+   "name": "small_mlp_seed44",
+   "model": "small_mlp",
+   "seed": 44,
+   "expected_initialization_full": "6cf4fafe3e079360222dca5f00dba31805be08c92a6d34c846f08540e39c0906"
+  },
+  {
+   "name": "interaction_gated_seed42",
+   "model": "interaction_gated",
+   "seed": 42,
+   "expected_initialization_full": "a98a514681c1bde02543579f013b5ad2a753258ecf923dd834cd543125261def"
+  },
+  {
+   "name": "interaction_gated_seed43",
+   "model": "interaction_gated",
+   "seed": 43,
+   "expected_initialization_full": "8a9e904489c03a8e8c895f9ecc9ed561d81d7360e3085bb918ce5d25ef483550"
+  },
+  {
+   "name": "interaction_gated_seed44",
+   "model": "interaction_gated",
+   "seed": 44,
+   "expected_initialization_full": "4517f09cd7150d185061c941e1d09466128f9d6120b23e95b6f8d101b18505a7"
+  },
+  {
+   "name": "interaction_gated_no_difference_seed42",
+   "model": "interaction_gated_no_difference",
+   "seed": 42,
+   "expected_initialization_full": "a98a514681c1bde02543579f013b5ad2a753258ecf923dd834cd543125261def"
+  },
+  {
+   "name": "interaction_gated_no_difference_seed43",
+   "model": "interaction_gated_no_difference",
+   "seed": 43,
+   "expected_initialization_full": "8a9e904489c03a8e8c895f9ecc9ed561d81d7360e3085bb918ce5d25ef483550"
+  },
+  {
+   "name": "interaction_gated_no_difference_seed44",
+   "model": "interaction_gated_no_difference",
+   "seed": 44,
+   "expected_initialization_full": "4517f09cd7150d185061c941e1d09466128f9d6120b23e95b6f8d101b18505a7"
+  },
+  {
+   "name": "interaction_gated_no_product_seed42",
+   "model": "interaction_gated_no_product",
+   "seed": 42,
+   "expected_initialization_full": "a98a514681c1bde02543579f013b5ad2a753258ecf923dd834cd543125261def"
+  },
+  {
+   "name": "interaction_gated_no_product_seed43",
+   "model": "interaction_gated_no_product",
+   "seed": 43,
+   "expected_initialization_full": "8a9e904489c03a8e8c895f9ecc9ed561d81d7360e3085bb918ce5d25ef483550"
+  },
+  {
+   "name": "interaction_gated_no_product_seed44",
+   "model": "interaction_gated_no_product",
+   "seed": 44,
+   "expected_initialization_full": "4517f09cd7150d185061c941e1d09466128f9d6120b23e95b6f8d101b18505a7"
+  },
+  {
+   "name": "interaction_gated_no_both_seed42",
+   "model": "interaction_gated_no_both",
+   "seed": 42,
+   "expected_initialization_full": "a98a514681c1bde02543579f013b5ad2a753258ecf923dd834cd543125261def"
+  },
+  {
+   "name": "interaction_gated_no_both_seed43",
+   "model": "interaction_gated_no_both",
+   "seed": 43,
+   "expected_initialization_full": "8a9e904489c03a8e8c895f9ecc9ed561d81d7360e3085bb918ce5d25ef483550"
+  },
+  {
+   "name": "interaction_gated_no_both_seed44",
+   "model": "interaction_gated_no_both",
+   "seed": 44,
+   "expected_initialization_full": "4517f09cd7150d185061c941e1d09466128f9d6120b23e95b6f8d101b18505a7"
+  },
+  {
+   "name": "interaction_gated_no_dino_seed42",
+   "model": "interaction_gated_no_dino",
+   "seed": 42,
+   "expected_initialization_full": "a98a514681c1bde02543579f013b5ad2a753258ecf923dd834cd543125261def"
+  },
+  {
+   "name": "interaction_gated_no_dino_seed43",
+   "model": "interaction_gated_no_dino",
+   "seed": 43,
+   "expected_initialization_full": "8a9e904489c03a8e8c895f9ecc9ed561d81d7360e3085bb918ce5d25ef483550"
+  },
+  {
+   "name": "interaction_gated_no_dino_seed44",
+   "model": "interaction_gated_no_dino",
+   "seed": 44,
+   "expected_initialization_full": "4517f09cd7150d185061c941e1d09466128f9d6120b23e95b6f8d101b18505a7"
+  },
+  {
+   "name": "interaction_gated_no_dino_no_both_seed42",
+   "model": "interaction_gated_no_dino_no_both",
+   "seed": 42,
+   "expected_initialization_full": "a98a514681c1bde02543579f013b5ad2a753258ecf923dd834cd543125261def"
+  },
+  {
+   "name": "interaction_gated_no_dino_no_both_seed43",
+   "model": "interaction_gated_no_dino_no_both",
+   "seed": 43,
+   "expected_initialization_full": "8a9e904489c03a8e8c895f9ecc9ed561d81d7360e3085bb918ce5d25ef483550"
+  },
+  {
+   "name": "interaction_gated_no_dino_no_both_seed44",
+   "model": "interaction_gated_no_dino_no_both",
+   "seed": 44,
+   "expected_initialization_full": "4517f09cd7150d185061c941e1d09466128f9d6120b23e95b6f8d101b18505a7"
+  },
+  {
+   "name": "interaction_gated_bilinear_view_seed42",
+   "model": "interaction_gated_bilinear_view",
+   "seed": 42,
+   "expected_initialization_full": "744979bb794a40eefa268a3cf97c3eec7568e4a4784a52d3432b6421a408a66e"
+  },
+  {
+   "name": "interaction_gated_bilinear_view_seed43",
+   "model": "interaction_gated_bilinear_view",
+   "seed": 43,
+   "expected_initialization_full": "7c2edc1ae2f101677f4358ca57a685eca9db2083af9a0a8ddca538896dc44641"
+  },
+  {
+   "name": "interaction_gated_bilinear_view_seed44",
+   "model": "interaction_gated_bilinear_view",
+   "seed": 44,
+   "expected_initialization_full": "b7409e2cc30679ceea7765c36354a7ef5e6691d2f090f15fbfc31d135c841b58"
+  },
+  {
+   "name": "wide_mlp_seed42",
+   "model": "wide_mlp",
+   "seed": 42,
+   "expected_initialization_full": "af5b5e7e97538a6645242105ef4c7c3a8bfd266ef33e781c356cede055c5da6e"
+  },
+  {
+   "name": "wide_mlp_seed43",
+   "model": "wide_mlp",
+   "seed": 43,
+   "expected_initialization_full": "769d487556a6010f1c7badbcda3e28151dec245fd021ea1c812d3f96db0fd575"
+  },
+  {
+   "name": "wide_mlp_seed44",
+   "model": "wide_mlp",
+   "seed": 44,
+   "expected_initialization_full": "4ea9be1e3ad5d45c8e4e657028245e7fdb7743e11de450014d65e2996ae0a666"
+  },
+  {
+   "name": "local_patch_attention_seed42",
+   "model": "local_patch_attention",
+   "seed": 42,
+   "expected_initialization_full": "b0e2eb50dd3330cfd906b864c24ed086004632ef484f0aedbf4c41fbe5005e67"
+  },
+  {
+   "name": "local_patch_attention_seed43",
+   "model": "local_patch_attention",
+   "seed": 43,
+   "expected_initialization_full": "6f9086ec5e5b9a77bcbdd274f135f6a905ad80dda6a02eb65f855a104e9234fe"
+  },
+  {
+   "name": "local_patch_attention_seed44",
+   "model": "local_patch_attention",
+   "seed": 44,
+   "expected_initialization_full": "4958b137e1a9ee7feaaf9b0a4c73a348032682016805f59421a0cd80a11d2836"
+  },
+  {
+   "name": "local_patch_attention_no_null_seed42",
+   "model": "local_patch_attention_no_null",
+   "seed": 42,
+   "expected_initialization_full": "328ea1e611b21765b4ae49a69a7134757e84916779b5d1f04e957bc6b48b3c96"
+  },
+  {
+   "name": "local_patch_attention_no_null_seed43",
+   "model": "local_patch_attention_no_null",
+   "seed": 43,
+   "expected_initialization_full": "bf851bac0e81731900320722a83d9a133fd52bb6bb0cd913adc6b77109dd20d4"
+  },
+  {
+   "name": "local_patch_attention_no_null_seed44",
+   "model": "local_patch_attention_no_null",
+   "seed": 44,
+   "expected_initialization_full": "a167c90de7c6e7b2ffc3224d04b2ceea377dee4f1416864030d2fffa94f69f52"
+  },
+  {
+   "name": "local_patch_attention_no_reference_seed42",
+   "model": "local_patch_attention_no_reference",
+   "seed": 42,
+   "expected_initialization_full": "b0e2eb50dd3330cfd906b864c24ed086004632ef484f0aedbf4c41fbe5005e67"
+  },
+  {
+   "name": "local_patch_attention_no_reference_seed43",
+   "model": "local_patch_attention_no_reference",
+   "seed": 43,
+   "expected_initialization_full": "6f9086ec5e5b9a77bcbdd274f135f6a905ad80dda6a02eb65f855a104e9234fe"
+  },
+  {
+   "name": "local_patch_attention_no_reference_seed44",
+   "model": "local_patch_attention_no_reference",
+   "seed": 44,
+   "expected_initialization_full": "4958b137e1a9ee7feaaf9b0a4c73a348032682016805f59421a0cd80a11d2836"
+  },
+  {
+   "name": "local_patch_attention_no_null_no_reference_seed42",
+   "model": "local_patch_attention_no_null_no_reference",
+   "seed": 42,
+   "expected_initialization_full": "328ea1e611b21765b4ae49a69a7134757e84916779b5d1f04e957bc6b48b3c96"
+  },
+  {
+   "name": "local_patch_attention_no_null_no_reference_seed43",
+   "model": "local_patch_attention_no_null_no_reference",
+   "seed": 43,
+   "expected_initialization_full": "bf851bac0e81731900320722a83d9a133fd52bb6bb0cd913adc6b77109dd20d4"
+  },
+  {
+   "name": "local_patch_attention_no_null_no_reference_seed44",
+   "model": "local_patch_attention_no_null_no_reference",
+   "seed": 44,
+   "expected_initialization_full": "a167c90de7c6e7b2ffc3224d04b2ceea377dee4f1416864030d2fffa94f69f52"
+  },
+  {
+   "name": "local_patch_attention_uniform_seed42",
+   "model": "local_patch_attention_uniform",
+   "seed": 42,
+   "expected_initialization_full": "c682e5cb8b03dbb3b26cb31ed5f68a7ec5c80355f7d33525366080e37ff95af4"
+  },
+  {
+   "name": "local_patch_attention_uniform_seed43",
+   "model": "local_patch_attention_uniform",
+   "seed": 43,
+   "expected_initialization_full": "88c6d371847fa99b57d93be71fdc9bdb5eee3eacecedd500f9389c251bdc2a60"
+  },
+  {
+   "name": "local_patch_attention_uniform_seed44",
+   "model": "local_patch_attention_uniform",
+   "seed": 44,
+   "expected_initialization_full": "ecbf56b6ef8ec172218097d2cec6ae7c21a6773070b8a58adb4dc7344c883382"
+  },
+  {
+   "name": "local_patch_attention_capacity_control_seed42",
+   "model": "local_patch_attention_capacity_control",
+   "seed": 42,
+   "expected_initialization_full": "ea2ef068d0358b0e532275415b8f25e4d44d32f6b43cc5f8bb70dd1dad6c4494"
+  },
+  {
+   "name": "local_patch_attention_capacity_control_seed43",
+   "model": "local_patch_attention_capacity_control",
+   "seed": 43,
+   "expected_initialization_full": "f466b6a33384d7f5855a5092b73d2b37e389ea8452f8eaf282f84467cc8ab19b"
+  },
+  {
+   "name": "local_patch_attention_capacity_control_seed44",
+   "model": "local_patch_attention_capacity_control",
+   "seed": 44,
+   "expected_initialization_full": "9dd64cc087eb04354bff23de6741c191e1454889d49f675986555640eafcb69c"
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "description": "5-fold CV: standalone text branch per fold (sarcasm.cv.cv_ocr_branch). to_f{k} reads the post and the OCR text; tn_f{k} is the same run with evidence='none' (post only). sarcasm.cv.fuse_cv fuses each with the wide-MLP fold predictions: sep_f{k} = wide + to (separately trained fusion model), sepn_f{k} = wide + tn (same fusion without OCR).",
+ "common": {
+  "encoder_path": "${MODELS}/deberta-v3-small",
+  "evidence_root": "${DATA}/evidence",
+  "head_lr": 0.0001,
+  "weight_decay": 0.01,
+  "epochs": 10,
+  "patience": 3,
+  "micro_batch": 4,
+  "effective_batch": 16,
+  "eval_batch": 8,
+  "warmup_fraction": 0.1,
+  "grad_clip": 1.0,
+  "checkpoint_steps": 200,
+  "gradient_checkpointing": false,
+  "cv_folds": "${DATA}/cv5/folds.json",
+  "cv_folds_sha256": "710e090549e637941926c002fbc2f011982ffcb5b555b1a83dd7d44cfd106cf1"
+ },
+ "runs": [
+  {
+   "name": "to_f0",
+   "mode": "joint",
+   "evidence": "ocr",
+   "seed": 42,
+   "encoder_lr": 1e-05,
+   "fold": 0
+  },
+  {
+   "name": "to_f1",
+   "mode": "joint",
+   "evidence": "ocr",
+   "seed": 43,
+   "encoder_lr": 1e-05,
+   "fold": 1
+  },
+  {
+   "name": "to_f2",
+   "mode": "joint",
+   "evidence": "ocr",
+   "seed": 44,
+   "encoder_lr": 1e-05,
+   "fold": 2
+  },
+  {
+   "name": "to_f3",
+   "mode": "joint",
+   "evidence": "ocr",
+   "seed": 45,
+   "encoder_lr": 1e-05,
+   "fold": 3
+  },
+  {
+   "name": "to_f4",
+   "mode": "joint",
+   "evidence": "ocr",
+   "seed": 46,
+   "encoder_lr": 1e-05,
+   "fold": 4
+  },
+  {
+   "name": "tn_f0",
+   "mode": "joint",
+   "evidence": "none",
+   "seed": 42,
+   "encoder_lr": 1e-05,
+   "fold": 0
+  },
+  {
+   "name": "tn_f1",
+   "mode": "joint",
+   "evidence": "none",
+   "seed": 43,
+   "encoder_lr": 1e-05,
+   "fold": 1
+  },
+  {
+   "name": "tn_f2",
+   "mode": "joint",
+   "evidence": "none",
+   "seed": 44,
+   "encoder_lr": 1e-05,
+   "fold": 2
+  },
+  {
+   "name": "tn_f3",
+   "mode": "joint",
+   "evidence": "none",
+   "seed": 45,
+   "encoder_lr": 1e-05,
+   "fold": 3
+  },
+  {
+   "name": "tn_f4",
+   "mode": "joint",
+   "evidence": "none",
+   "seed": 46,
+   "encoder_lr": 1e-05,
+   "fold": 4
+  }
+ ]
+}

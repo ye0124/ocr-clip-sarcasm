@@ -1,0 +1,80 @@
+{
+ "train": {
+  "all": {
+   "n": 19816,
+   "sarcastic_percent": 48.3
+  },
+  "with_ocr_text": {
+   "n": 15500,
+   "sarcastic_percent": 52.5
+  },
+  "without_ocr_text": {
+   "n": 4316,
+   "sarcastic_percent": 33.3
+  },
+  "ocr_gt20_words": {
+   "n": 5205,
+   "sarcastic_percent": 65.3
+  },
+  "ocr_gt60_words": {
+   "n": 1827,
+   "sarcastic_percent": 63.3
+  },
+  "ocr_contains_sarcas": {
+   "n": 616,
+   "sarcastic_percent": 100.0
+  }
+ },
+ "validation": {
+  "all": {
+   "n": 2410,
+   "sarcastic_percent": 43.2
+  },
+  "with_ocr_text": {
+   "n": 1887,
+   "sarcastic_percent": 46.2
+  },
+  "without_ocr_text": {
+   "n": 523,
+   "sarcastic_percent": 32.5
+  },
+  "ocr_gt20_words": {
+   "n": 604,
+   "sarcastic_percent": 57.0
+  },
+  "ocr_gt60_words": {
+   "n": 207,
+   "sarcastic_percent": 58.0
+  },
+  "ocr_contains_sarcas": {
+   "n": 66,
+   "sarcastic_percent": 86.4
+  }
+ },
+ "test": {
+  "all": {
+   "n": 2409,
+   "sarcastic_percent": 43.0
+  },
+  "with_ocr_text": {
+   "n": 1863,
+   "sarcastic_percent": 47.1
+  },
+  "without_ocr_text": {
+   "n": 546,
+   "sarcastic_percent": 29.1
+  },
+  "ocr_gt20_words": {
+   "n": 609,
+   "sarcastic_percent": 61.1
+  },
+  "ocr_gt60_words": {
+   "n": 206,
+   "sarcastic_percent": 61.2
+  },
+  "ocr_contains_sarcas": {
+   "n": 67,
+   "sarcastic_percent": 55.2
+  }
+ }
+}

@@ -1,0 +1,14 @@
+config,run,model,seed,epochs,train_minutes,peak_train_memory_mib,source
+clip_baselines,wide_mlp_seed42,wide_mlp,42,6,15.8,1056.7,e6_supplement_20261020/runs/clip_lora_mlp_capacity_matched_seed42/run_info.json
+clip_baselines,wide_mlp_seed43,wide_mlp,43,6,15.9,1056.7,e6_supplement_20261020/runs/clip_lora_mlp_capacity_matched_seed43/run_info.json
+clip_baselines,wide_mlp_seed44,wide_mlp,44,6,15.9,1056.7,e6_supplement_20261020/runs/clip_lora_mlp_capacity_matched_seed44/run_info.json
+main_model,main_seed42,main,42,5,48.9,4456.5,clip_bert_joint_20261101/runs/JOINT_clip0.0001_seed42/result.json
+main_model,main_seed43,main,43,8,78.1,4460.9,clip_bert_joint_20261101/runs/JOINT_clip0.0001_seed43/result.json
+main_model,main_seed44,main,44,6,58.3,4466.7,clip_bert_joint_20261101/runs/JOINT_clip0.0001_seed44/result.json
+main_model,main_seed45,main,45,8,65.4,4462.0,main_ablation_20261106/runs/full_seed45/result.json
+main_model,main_seed46,main,46,6,48.9,4454.4,main_ablation_20261106/runs/full_seed46/result.json
+text_swap_variant,variant_seed42,variant,42,6,56.7,5311.2,text_swap_cf_20261104/runs/S45S2_seed42/result.json
+text_swap_variant,variant_seed43,variant,43,6,56.6,5484.2,text_swap_cf_20261104/runs/S45S2_seed43/result.json
+text_swap_variant,variant_seed44,variant,44,8,75.2,5622.9,text_swap_cf_20261104/runs/S45S2_seed44/result.json
+text_swap_variant,variant_seed45,variant,45,9,84.9,5506.7,main_ablation_20261106/runs/S45S2_seed45/result.json
+text_swap_variant,variant_seed46,variant,46,8,75.4,5437.7,main_ablation_20261106/runs/S45S2_seed46/result.json

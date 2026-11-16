@@ -1,0 +1,54 @@
+{
+ "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+ "torch": "2.6.0+cu124",
+ "n_images": 256,
+ "split": "validation (images only)",
+ "params": {
+  "ocr_enhanced_clip": {
+   "total": 299225265,
+   "trainable": 147947952
+  },
+  "image_text_branch_eq_wide_mlp": {
+   "total": 157196463,
+   "trainable": 5919150
+  },
+  "ocr_text_branch": {
+   "total": 142028802,
+   "trainable": 142028802
+  }
+ },
+ "timing": {
+  "wide_bs1": {
+   "batch": 1,
+   "measured_images": 251,
+   "preprocess_ms_per_image": 11.32,
+   "forward_ms_per_image": 33.87,
+   "forward_ms_per_batch_median": 33.94,
+   "peak_allocated_mib": 1177.7
+  },
+  "wide_bs16": {
+   "batch": 16,
+   "measured_images": 240,
+   "preprocess_ms_per_image": 10.75,
+   "forward_ms_per_image": 3.13,
+   "forward_ms_per_batch_median": 50.12,
+   "peak_allocated_mib": 1227.6
+  },
+  "ocr_enhanced_clip_bs1": {
+   "batch": 1,
+   "measured_images": 251,
+   "preprocess_ms_per_image": 11.47,
+   "forward_ms_per_image": 48.87,
+   "forward_ms_per_batch_median": 48.83,
+   "peak_allocated_mib": 1286.3
+  },
+  "ocr_enhanced_clip_bs16": {
+   "batch": 16,
+   "measured_images": 240,
+   "preprocess_ms_per_image": 10.78,
+   "forward_ms_per_image": 4.63,
+   "forward_ms_per_batch_median": 75.86,
+   "peak_allocated_mib": 1454.4
+  }
+ }
+}

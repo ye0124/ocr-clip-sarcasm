@@ -1,0 +1,20 @@
+# Main environment (training, evaluation, analysis). Python 3.10.
+# Versions of the environment used for every reported run (Ubuntu, CUDA 12.4 wheels).
+# Install PyTorch first for your CUDA version, e.g.
+#   pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+torchvision==0.21.0
+transformers==5.17.0
+datasets==5.0.1
+huggingface_hub==1.33.0
+safetensors==0.8.0
+tokenizers==0.23.2
+sentencepiece==0.2.1
+protobuf==6.32.1
+accelerate==1.10.1
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.7.2
+pyarrow==25.0.1
+pillow==12.3.0
+tqdm==4.70.1

@@ -1,0 +1,26 @@
+{
+ "description": "Re-training with this repository's code on the original machine (RTX 2070 SUPER): main_seed42 and wide_mlp_seed42, train + test stages, compared row by row with the predictions of the original runs.",
+ "date": "2026-11-09",
+ "comparison": {
+  "main_seed42 validation": {
+   "rows": 2410,
+   "same_prediction": 2410,
+   "max_abs_prob_diff": 0.0
+  },
+  "main_seed42 test": {
+   "rows": 2409,
+   "same_prediction": 2409,
+   "max_abs_prob_diff": 0.0
+  },
+  "wide_mlp_seed42 validation": {
+   "rows": 2410,
+   "same_prediction": 2410,
+   "max_abs_prob_diff": 7.748603820800781e-07
+  },
+  "wide_mlp_seed42 test": {
+   "rows": 2409,
+   "same_prediction": 2409,
+   "max_abs_prob_diff": 9.5367431640625e-07
+  }
+ }
+}

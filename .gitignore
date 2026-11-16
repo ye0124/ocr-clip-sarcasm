@@ -1,0 +1,22 @@
+# downloaded / generated data and models (see data/README.md)
+data/*
+!data/README.md
+!data/cv5/
+data/cv5/*
+!data/cv5/folds.json
+/models/
+/outputs/
+# python / editors
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.DS_Store
+*.tmp
+*.pt
+*.bin
+*.safetensors

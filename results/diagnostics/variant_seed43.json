@@ -1,0 +1,65 @@
+{
+  "run": "experiments/text_swap_cf_20261104/runs/S45S2_seed43",
+  "clean_vs_saved_max_abs_diff": 1.1920928955078125e-07,
+  "clean": {
+    "rows": 2410,
+    "accuracy": 0.8597510373443984,
+    "macro_f1": 0.8584391850512558,
+    "sarcasm_f1": 0.8448117539026629,
+    "confusion_matrix": [
+      [
+        1152,
+        216
+      ],
+      [
+        122,
+        920
+      ]
+    ]
+  },
+  "mask_all": {
+    "metrics": {
+      "rows": 2410,
+      "accuracy": 0.8485477178423236,
+      "macro_f1": 0.8473097864246397,
+      "sarcasm_f1": 0.833561331509348,
+      "confusion_matrix": [
+        [
+          1131,
+          237
+        ],
+        [
+          128,
+          914
+        ]
+      ]
+    },
+    "flip_rate_with_ocr": 0.05564387917329094,
+    "mean_abs_dp_with_ocr": 0.057005475358140115
+  },
+  "inject": {
+    "covered": 2410,
+    "metrics": {
+      "rows": 2410,
+      "accuracy": 0.8539419087136929,
+      "macro_f1": 0.8525277431835455,
+      "sarcasm_f1": 0.8380864765409384,
+      "confusion_matrix": [
+        [
+          1147,
+          221
+        ],
+        [
+          131,
+          911
+        ]
+      ]
+    },
+    "fpr_clean": 0.15789473684210525,
+    "fpr_injected": 0.1615497076023392,
+    "fnr_clean": 0.11708253358925147,
+    "fnr_injected": 0.12571976967370446,
+    "mean_dp_neg": 0.006380285375262354,
+    "mean_dp_pos": -0.004303114571060714
+  }
+}

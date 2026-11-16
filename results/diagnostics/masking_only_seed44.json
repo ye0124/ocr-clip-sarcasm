@@ -1,0 +1,65 @@
+{
+  "run": "experiments/ocr_dropout_only_20261105/runs/S2_seed44",
+  "clean_vs_saved_max_abs_diff": 1.1920928955078125e-07,
+  "clean": {
+    "rows": 2410,
+    "accuracy": 0.8556016597510373,
+    "macro_f1": 0.8547175733739656,
+    "sarcasm_f1": 0.8433843384338434,
+    "confusion_matrix": [
+      [
+        1125,
+        243
+      ],
+      [
+        105,
+        937
+      ]
+    ]
+  },
+  "mask_all": {
+    "metrics": {
+      "rows": 2410,
+      "accuracy": 0.8427385892116183,
+      "macro_f1": 0.8419614436376327,
+      "sarcasm_f1": 0.8308790718429273,
+      "confusion_matrix": [
+        [
+          1100,
+          268
+        ],
+        [
+          111,
+          931
+        ]
+      ]
+    },
+    "flip_rate_with_ocr": 0.06624271330153683,
+    "mean_abs_dp_with_ocr": 0.06999884824029597
+  },
+  "inject": {
+    "covered": 2410,
+    "metrics": {
+      "rows": 2410,
+      "accuracy": 0.7634854771784232,
+      "macro_f1": 0.7633992790886093,
+      "sarcasm_f1": 0.7679153094462541,
+      "confusion_matrix": [
+        [
+          897,
+          471
+        ],
+        [
+          99,
+          943
+        ]
+      ]
+    },
+    "fpr_clean": 0.17763157894736842,
+    "fpr_injected": 0.3442982456140351,
+    "fnr_clean": 0.10076775431861806,
+    "fnr_injected": 0.0950095969289827,
+    "mean_dp_neg": 0.1458914294920632,
+    "mean_dp_pos": 0.0013405069925119804
+  }
+}

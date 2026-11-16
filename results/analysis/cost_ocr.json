@@ -1,0 +1,14 @@
+{
+ "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+ "paddle": "3.2.0",
+ "n_images": 256,
+ "warmup": 10,
+ "model_init_s": 1.1,
+ "ms_per_image_mean": 125.4,
+ "ms_per_image_median": 120.5,
+ "ms_p90": 198.2,
+ "ms_mean_with_text": 131.8,
+ "ms_mean_without_text": 94.5,
+ "frac_with_text": 0.828,
+ "peak_gpu_mib": 775.6
+}

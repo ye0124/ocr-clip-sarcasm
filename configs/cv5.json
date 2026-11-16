@@ -1,0 +1,339 @@
+{
+ "description": "5-fold image-grouped CV over MMSD2.0 train+validation (sarcasm.cv.cv_train); the test split is never read. Arms: wide (CLIP + wide MLP), full (main model), S45S2 (text-swap + masking variant), noocr (main model without OCR text). Fold k uses seed 42+k for every arm.",
+ "common": {
+  "clip_path": "${MODELS}/clip-vit-base-patch32",
+  "arrow_root": "${ARROW_ROOT}",
+  "encoder_path": "${MODELS}/deberta-v3-small",
+  "evidence_root": "${DATA}/evidence",
+  "clip_weight_decay": 0.01,
+  "encoder_lr": 1e-05,
+  "head_lr": 0.0001,
+  "to_weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "grad_clip": 1.0,
+  "epochs": 10,
+  "patience": 3,
+  "micro_batch": 8,
+  "effective_batch": 16,
+  "eval_batch": 16,
+  "num_workers": 4,
+  "init_scale": 512,
+  "max_amp_skips": 50,
+  "checkpoint_steps": 300,
+  "use_ocr": true,
+  "to_image": "shared",
+  "lora": true,
+  "loss": "branch_sum",
+  "cv_folds": "${DATA}/cv5/folds.json",
+  "cv_folds_sha256": "710e090549e637941926c002fbc2f011982ffcb5b555b1a83dd7d44cfd106cf1",
+  "wide_lr": 0.0001,
+  "wide_weight_decay": 0.01,
+  "wide_batch": 16,
+  "wide_epochs": 20,
+  "wide_patience": 4
+ },
+ "b_initialization_full": {
+  "42": "af5b5e7e97538a6645242105ef4c7c3a8bfd266ef33e781c356cede055c5da6e",
+  "43": "769d487556a6010f1c7badbcda3e28151dec245fd021ea1c812d3f96db0fd575",
+  "44": "4ea9be1e3ad5d45c8e4e657028245e7fdb7743e11de450014d65e2996ae0a666",
+  "45": "c1f039d5412dd074b71132ef54fcdfe1f4c2b21a69b24398a10e6b0894c1aa98",
+  "46": "0b902706f196a1bbe058b5192261a323f50405ccbc6185fc62547ee380c41f30"
+ },
+ "runs": [
+  {
+   "name": "wide_f0",
+   "arm": "wide",
+   "fold": 0,
+   "seed": 42,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "full_f0",
+   "arm": "full",
+   "fold": 0,
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "S45S2_f0",
+   "arm": "S45S2",
+   "fold": 0,
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "cf_lambda": 1.0,
+   "text_swap": {
+    "p_cf": 0.5,
+    "p_guided": 0.5,
+    "p_replace": 0.5,
+    "scale_low": 0.8,
+    "scale_high": 1.25,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "crop_pad_x": 0.15,
+    "crop_pad_y": 0.12,
+    "feather": 2.0,
+    "ring": 3
+   },
+   "ocr_dropout": {
+    "p_sample": 0.25,
+    "p_all": 0.2,
+    "p_line": 0.5,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "p_blur": 0.5,
+    "ring": 3
+   },
+   "bias_pools": "${DATA}/cv5/fold0/bias_pools.json",
+   "bias_pools_sha256": "c5cb204df18b432d1dc18737245060d7a222c93d82f64da54c8a7986f733629f"
+  },
+  {
+   "name": "wide_f1",
+   "arm": "wide",
+   "fold": 1,
+   "seed": 43,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "full_f1",
+   "arm": "full",
+   "fold": 1,
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "S45S2_f1",
+   "arm": "S45S2",
+   "fold": 1,
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "cf_lambda": 1.0,
+   "text_swap": {
+    "p_cf": 0.5,
+    "p_guided": 0.5,
+    "p_replace": 0.5,
+    "scale_low": 0.8,
+    "scale_high": 1.25,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "crop_pad_x": 0.15,
+    "crop_pad_y": 0.12,
+    "feather": 2.0,
+    "ring": 3
+   },
+   "ocr_dropout": {
+    "p_sample": 0.25,
+    "p_all": 0.2,
+    "p_line": 0.5,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "p_blur": 0.5,
+    "ring": 3
+   },
+   "bias_pools": "${DATA}/cv5/fold1/bias_pools.json",
+   "bias_pools_sha256": "64d90569c6351a98b9b518952846f0797590f20d73a6e0bcd10c866d83bfe729"
+  },
+  {
+   "name": "wide_f2",
+   "arm": "wide",
+   "fold": 2,
+   "seed": 44,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "full_f2",
+   "arm": "full",
+   "fold": 2,
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "S45S2_f2",
+   "arm": "S45S2",
+   "fold": 2,
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "cf_lambda": 1.0,
+   "text_swap": {
+    "p_cf": 0.5,
+    "p_guided": 0.5,
+    "p_replace": 0.5,
+    "scale_low": 0.8,
+    "scale_high": 1.25,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "crop_pad_x": 0.15,
+    "crop_pad_y": 0.12,
+    "feather": 2.0,
+    "ring": 3
+   },
+   "ocr_dropout": {
+    "p_sample": 0.25,
+    "p_all": 0.2,
+    "p_line": 0.5,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "p_blur": 0.5,
+    "ring": 3
+   },
+   "bias_pools": "${DATA}/cv5/fold2/bias_pools.json",
+   "bias_pools_sha256": "da1e71109e912bfb57640269bf2c91033a7fb58c8d5d5b6efbdae22d56f5a8ae"
+  },
+  {
+   "name": "wide_f3",
+   "arm": "wide",
+   "fold": 3,
+   "seed": 45,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "full_f3",
+   "arm": "full",
+   "fold": 3,
+   "seed": 45,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "S45S2_f3",
+   "arm": "S45S2",
+   "fold": 3,
+   "seed": 45,
+   "clip_lr": 0.0001,
+   "cf_lambda": 1.0,
+   "text_swap": {
+    "p_cf": 0.5,
+    "p_guided": 0.5,
+    "p_replace": 0.5,
+    "scale_low": 0.8,
+    "scale_high": 1.25,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "crop_pad_x": 0.15,
+    "crop_pad_y": 0.12,
+    "feather": 2.0,
+    "ring": 3
+   },
+   "ocr_dropout": {
+    "p_sample": 0.25,
+    "p_all": 0.2,
+    "p_line": 0.5,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "p_blur": 0.5,
+    "ring": 3
+   },
+   "bias_pools": "${DATA}/cv5/fold3/bias_pools.json",
+   "bias_pools_sha256": "4008363b86cae14d6a8f2dba12586dfb41b118250638a46ff22b25f9cae84a28"
+  },
+  {
+   "name": "wide_f4",
+   "arm": "wide",
+   "fold": 4,
+   "seed": 46,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "full_f4",
+   "arm": "full",
+   "fold": 4,
+   "seed": 46,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null
+  },
+  {
+   "name": "S45S2_f4",
+   "arm": "S45S2",
+   "fold": 4,
+   "seed": 46,
+   "clip_lr": 0.0001,
+   "cf_lambda": 1.0,
+   "text_swap": {
+    "p_cf": 0.5,
+    "p_guided": 0.5,
+    "p_replace": 0.5,
+    "scale_low": 0.8,
+    "scale_high": 1.25,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "crop_pad_x": 0.15,
+    "crop_pad_y": 0.12,
+    "feather": 2.0,
+    "ring": 3
+   },
+   "ocr_dropout": {
+    "p_sample": 0.25,
+    "p_all": 0.2,
+    "p_line": 0.5,
+    "pad_x": 0.2,
+    "pad_y": 0.3,
+    "p_blur": 0.5,
+    "ring": 3
+   },
+   "bias_pools": "${DATA}/cv5/fold4/bias_pools.json",
+   "bias_pools_sha256": "70e2b46d9f640cec22a6d2dac9233f46ab3cbb8c9523aafd65092cb8472a631e"
+  },
+  {
+   "name": "noocr_f0",
+   "arm": "noocr",
+   "fold": 0,
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null,
+   "use_ocr": false
+  },
+  {
+   "name": "noocr_f1",
+   "arm": "noocr",
+   "fold": 1,
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null,
+   "use_ocr": false
+  },
+  {
+   "name": "noocr_f2",
+   "arm": "noocr",
+   "fold": 2,
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null,
+   "use_ocr": false
+  },
+  {
+   "name": "noocr_f3",
+   "arm": "noocr",
+   "fold": 3,
+   "seed": 45,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null,
+   "use_ocr": false
+  },
+  {
+   "name": "noocr_f4",
+   "arm": "noocr",
+   "fold": 4,
+   "seed": 46,
+   "clip_lr": 0.0001,
+   "bias_pools": null,
+   "bias_pools_sha256": null,
+   "use_ocr": false
+  }
+ ]
+}

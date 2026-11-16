@@ -1,0 +1,162 @@
+{
+ "description": "OCR-enhanced CLIP model (sarcasm.train.train_main): main model seeds 42-46, CLIP LR grid {1e-4, 5e-5} (1e-4 chosen on validation with seeds 42/43), and the five single-component ablations. b_initialization_full = SHA-256 of the initial image-text branch per seed, identical to the CLIP + wide MLP baseline.",
+ "common": {
+  "clip_path": "${MODELS}/clip-vit-base-patch32",
+  "arrow_root": "${ARROW_ROOT}",
+  "encoder_path": "${MODELS}/deberta-v3-small",
+  "evidence_root": "${DATA}/evidence",
+  "clip_weight_decay": 0.01,
+  "encoder_lr": 1e-05,
+  "head_lr": 0.0001,
+  "to_weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "grad_clip": 1.0,
+  "epochs": 10,
+  "patience": 3,
+  "micro_batch": 8,
+  "effective_batch": 16,
+  "eval_batch": 16,
+  "num_workers": 4,
+  "init_scale": 512,
+  "max_amp_skips": 50,
+  "checkpoint_steps": 300,
+  "use_ocr": true,
+  "to_image": "shared",
+  "lora": true,
+  "loss": "branch_sum"
+ },
+ "b_initialization_full": {
+  "42": "af5b5e7e97538a6645242105ef4c7c3a8bfd266ef33e781c356cede055c5da6e",
+  "43": "769d487556a6010f1c7badbcda3e28151dec245fd021ea1c812d3f96db0fd575",
+  "44": "4ea9be1e3ad5d45c8e4e657028245e7fdb7743e11de450014d65e2996ae0a666",
+  "45": "c1f039d5412dd074b71132ef54fcdfe1f4c2b21a69b24398a10e6b0894c1aa98",
+  "46": "0b902706f196a1bbe058b5192261a323f50405ccbc6185fc62547ee380c41f30"
+ },
+ "runs": [
+  {
+   "name": "main_seed42",
+   "seed": 42,
+   "clip_lr": 0.0001
+  },
+  {
+   "name": "main_seed43",
+   "seed": 43,
+   "clip_lr": 0.0001
+  },
+  {
+   "name": "main_seed44",
+   "seed": 44,
+   "clip_lr": 0.0001
+  },
+  {
+   "name": "main_seed45",
+   "seed": 45,
+   "clip_lr": 0.0001
+  },
+  {
+   "name": "main_seed46",
+   "seed": 46,
+   "clip_lr": 0.0001
+  },
+  {
+   "name": "main_clip_lr5e-05_seed42",
+   "seed": 42,
+   "clip_lr": 5e-05
+  },
+  {
+   "name": "main_clip_lr5e-05_seed43",
+   "seed": 43,
+   "clip_lr": 5e-05
+  },
+  {
+   "name": "no_ocr_text_seed42",
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "use_ocr": false
+  },
+  {
+   "name": "no_ocr_text_seed43",
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "use_ocr": false
+  },
+  {
+   "name": "no_ocr_text_seed44",
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "use_ocr": false
+  },
+  {
+   "name": "ocr_branch_no_image_seed42",
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "to_image": "zero"
+  },
+  {
+   "name": "ocr_branch_no_image_seed43",
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "to_image": "zero"
+  },
+  {
+   "name": "ocr_branch_no_image_seed44",
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "to_image": "zero"
+  },
+  {
+   "name": "ocr_loss_no_lora_update_seed42",
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "to_image": "detach"
+  },
+  {
+   "name": "ocr_loss_no_lora_update_seed43",
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "to_image": "detach"
+  },
+  {
+   "name": "ocr_loss_no_lora_update_seed44",
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "to_image": "detach"
+  },
+  {
+   "name": "fusion_loss_only_seed42",
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "loss": "fused_nll"
+  },
+  {
+   "name": "fusion_loss_only_seed43",
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "loss": "fused_nll"
+  },
+  {
+   "name": "fusion_loss_only_seed44",
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "loss": "fused_nll"
+  },
+  {
+   "name": "no_lora_seed42",
+   "seed": 42,
+   "clip_lr": 0.0001,
+   "lora": false
+  },
+  {
+   "name": "no_lora_seed43",
+   "seed": 43,
+   "clip_lr": 0.0001,
+   "lora": false
+  },
+  {
+   "name": "no_lora_seed44",
+   "seed": 44,
+   "clip_lr": 0.0001,
+   "lora": false
+  }
+ ]
+}
